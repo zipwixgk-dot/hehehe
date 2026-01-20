@@ -1,10 +1,77 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My Website</title>
+    <title>Login Page</title>
+    <style>
+        body {
+            background: #f2f2f2;
+            font-family: Arial, sans-serif;
+        }
+
+        .login-box {
+            width: 300px;
+            margin: 120px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 8px 0;
+        }
+
+        button {
+            width: 95%;
+            padding: 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        #message {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
 </head>
+
 <body>
-  <h1>Hello 🎉</h1>
-  <p>This site is live.</p>
+
+<div class="login-box">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username"><br>
+    <input type="password" id="password" placeholder="Password"><br>
+    <button onclick="login()">Login</button>
+    <p id="message"></p>
+</div>
+
+<script>
+function login() {
+    var user = document.getElementById("username").value;
+    var pass = document.getElementById("password").value;
+
+    if(user === "admin" && pass === "1234") {
+        document.getElementById("message").style.color = "green";
+        document.getElementById("message").innerHTML = "Login Successful ✅";
+    } else {
+        document.getElementById("message").style.color = "red";
+        document.getElementById("message").innerHTML = "Invalid Login ❌";
+    }
+}
+</script>
+
 </body>
 </html>
